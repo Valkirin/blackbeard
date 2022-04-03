@@ -1,0 +1,37 @@
+//add class show to .collapse = .collapse.show
+$('#short-terms').click(function(e) {
+    $('#terms_collapse').collapse('show');
+});
+
+// scrollTop
+$(document).scroll(function() {
+  var y = $(this).scrollTop();
+  if (y > 300) {
+    $('.bottomMenu').fadeIn();
+  } else {
+    $('.bottomMenu').fadeOut();
+  }
+});
+
+//smooth scrolling
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $(".back-to-top a").on('click', function(event) {
+
+    if (this.hash !== "") {
+      event.preventDefault();
+      var hash = this.hash;
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 200, function(){
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+
+//scrollTop
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
